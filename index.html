@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f6feb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="英単語練習">
+  <title>英単語タイピング練習</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>英単語タイピング練習</h1>
+    <p id="status">準備中…</p>
+  </header>
+
+  <main>
+    <nav class="tabs" aria-label="画面切替">
+      <button class="tab active" data-screen="quiz">学習</button>
+      <button class="tab" data-screen="add">単語登録</button>
+      <button class="tab" data-screen="list">単語一覧</button>
+      <button class="tab" data-screen="backup">バックアップ</button>
+    </nav>
+
+    <section id="quiz" class="screen active">
+      <div class="card">
+        <div class="progress" id="progress">登録単語 0件</div>
+        <h2 id="question">まず「単語登録」からカードを追加してください</h2>
+        <label for="answer">英語を入力</label>
+        <input id="answer" type="text" autocomplete="off" autocapitalize="none"
+               spellcheck="false" placeholder="英語を入力">
+        <button id="checkBtn" class="primary">判定する</button>
+
+        <div id="result" class="result hidden" aria-live="polite">
+          <h3 id="judgement"></h3>
+          <p>正解：<strong id="correctAnswer"></strong></p>
+          <p>あなたの回答：<span id="yourAnswer"></span></p>
+          <img id="answerImage" class="answer-image hidden" alt="登録したイメージ画像">
+          <p id="example" class="example"></p>
+          <div class="button-row">
+            <button id="speakBtn">発音を聞く</button>
+            <button id="nextBtn" class="primary">次の問題</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="add" class="screen">
+      <form id="addForm" class="card">
+        <h2>新しい単語を登録</h2>
+        <label for="japanese">日本語</label>
+        <input id="japanese" required placeholder="例：障害を克服する">
+
+        <label for="english">正解の英語</label>
+        <input id="english" required autocapitalize="none" spellcheck="false"
+               placeholder="例：overcome an obstacle">
+
+        <label for="exampleInput">例文・補足（任意）</label>
+        <textarea id="exampleInput" rows="3"
+                  placeholder="例：She overcame every obstacle."></textarea>
+
+        <label for="imageInput">答えと一緒に表示する画像（任意）</label>
+        <input id="imageInput" type="file" accept="image/*">
+        <p class="note">画像はiPhone内に保存します。容量節約のため自動的に縮小します。</p>
+
+        <button class="primary" type="submit">登録する</button>
+      </form>
+    </section>
+
+    <section id="list" class="screen">
+      <div class="card">
+        <div class="list-head">
+          <h2>登録済み単語</h2>
+          <button id="deleteAllBtn" class="danger">全削除</button>
+        </div>
+        <div id="wordList"></div>
+      </div>
+    </section>
+
+    <section id="backup" class="screen">
+      <div class="card">
+        <h2>バックアップ</h2>
+        <p>端末の故障やSafariデータ削除に備え、定期的に保存してください。</p>
+        <button id="exportBtn" class="primary">バックアップを書き出す</button>
+
+        <label for="importInput" class="import-label">バックアップを読み込む</label>
+        <input id="importInput" type="file" accept=".json,application/json">
+        <p class="note">読み込むと、同じIDのカードは上書きされます。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>データはこの端末内に保存されます。</p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

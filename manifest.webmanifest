@@ -1,0 +1,22 @@
+{
+  "name": "英単語タイピング練習",
+  "short_name": "英単語練習",
+  "description": "日本語を見て英語を入力する、画像対応のオフライン学習アプリ",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f6fb",
+  "theme_color": "#1f6feb",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
