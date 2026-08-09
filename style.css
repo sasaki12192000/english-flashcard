@@ -105,3 +105,30 @@ footer {
   .tabs { grid-template-columns: repeat(2, 1fr); }
   .card { padding: 17px; }
 }
+
+.priority-badge {display:inline-block;margin-top:12px;padding:6px 10px;border-radius:999px;background:#fff7e6;color:#8a5700;font-size:.84rem;font-weight:700;}
+.stats-line {color:#667085;font-size:.9rem;}
+.sort-row {display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;margin:12px 0 4px;}
+.sort-row label {margin:0;}
+.sort-row select {width:100%;border:1px solid #c8d2e2;border-radius:12px;padding:10px;background:white;}
+.word-item .meta {color:#667085;margin-top:5px;font-size:.9rem;}
+.word-item .weakness {margin-top:5px;font-weight:700;font-size:.9rem;}
+
+.quick-answer { background:#f7f9fc; border:1px solid #e2e8f0; border-radius:15px; padding:14px; }
+.quick-title { margin:0 0 10px; text-align:center; color:#596579; font-weight:700; font-size:.9rem; }
+.quick-buttons { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.know-btn { background:#e8f7ee; color:#08783e; font-weight:800; border:1px solid #b9e3c9; }
+.dontknow-btn { background:#fff0f0; color:#b42318; font-weight:800; border:1px solid #f2c0bc; }
+.divider { display:flex; align-items:center; gap:10px; color:#8993a4; margin:18px 0 4px; font-size:.85rem; }
+.divider::before,.divider::after { content:""; height:1px; background:#e0e5ed; flex:1; }
+.word-actions { display:flex; gap:8px; }
+.edit-btn { background:#eef4ff; color:#174ea6; }
+.modal { position:fixed; inset:0; background:rgba(21,31,47,.55); padding:18px; display:flex; align-items:center; justify-content:center; z-index:1000; }
+.modal-card { width:min(680px,100%); max-height:90vh; overflow:auto; background:white; border-radius:18px; padding:20px; box-shadow:0 8px 28px rgba(28,45,74,.16); }
+.modal-head { display:flex; justify-content:space-between; align-items:center; }
+.modal-head h2 { margin:0; }
+.icon-btn { font-size:1.5rem; padding:6px 12px; background:#eef1f5; }
+.edit-image { width:100%; max-height:340px; object-fit:contain; border-radius:14px; margin:12px 0; background:#f7f8fa; }
+.checkbox-label { display:flex; align-items:center; gap:8px; font-weight:600; }
+.checkbox-label input { width:auto; }
+.current-image-wrap { margin-top:12px; }

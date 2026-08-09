@@ -1,7 +1,7 @@
 {
   "name": "英単語タイピング練習",
   "short_name": "英単語練習",
-  "description": "日本語を見て英語を入力する、画像対応のオフライン学習アプリ",
+  "description": "画像・タイピング・自己申告・苦手優先出題に対応したオフライン英語学習アプリ",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

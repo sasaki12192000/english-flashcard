@@ -29,20 +29,33 @@
     <section id="quiz" class="screen active">
       <div class="card">
         <div class="progress" id="progress">登録単語 0件</div>
+        <div class="priority-badge hidden" id="priorityBadge"></div>
         <h2 id="question">まず「単語登録」からカードを追加してください</h2>
+
+        <div class="quick-answer">
+          <p class="quick-title">急いでいるときは自己申告</p>
+          <div class="quick-buttons">
+            <button id="knowBtn" class="know-btn">✓ わかる</button>
+            <button id="dontKnowBtn" class="dontknow-btn">✕ わからない</button>
+          </div>
+        </div>
+
+        <div class="divider"><span>または英語を入力</span></div>
         <label for="answer">英語を入力</label>
         <input id="answer" type="text" autocomplete="off" autocapitalize="none"
                spellcheck="false" placeholder="英語を入力">
-        <button id="checkBtn" class="primary">判定する</button>
+        <button id="checkBtn" class="primary">入力した答えを判定</button>
 
         <div id="result" class="result hidden" aria-live="polite">
           <h3 id="judgement"></h3>
           <p>正解：<strong id="correctAnswer"></strong></p>
-          <p>あなたの回答：<span id="yourAnswer"></span></p>
+          <p id="yourAnswerRow">あなたの回答：<span id="yourAnswer"></span></p>
+          <p id="answerMode" class="stats-line"></p>
+          <p id="resultStats" class="stats-line"></p>
           <img id="answerImage" class="answer-image hidden" alt="登録したイメージ画像">
           <p id="example" class="example"></p>
           <div class="button-row">
-            <button id="speakBtn">発音を聞く</button>
+            <button id="speakBtn">🔊 もう一度聞く</button>
             <button id="nextBtn" class="primary">次の問題</button>
           </div>
         </div>
@@ -74,8 +87,17 @@
     <section id="list" class="screen">
       <div class="card">
         <div class="list-head">
-          <h2>登録済み単語</h2>
+          <div><h2>登録済み単語</h2><p id="overallStats" class="note"></p></div>
           <button id="deleteAllBtn" class="danger">全削除</button>
+        </div>
+        <div class="sort-row">
+          <label for="sortSelect">並び順</label>
+          <select id="sortSelect">
+            <option value="weak">苦手順</option>
+            <option value="new">新しい順</option>
+            <option value="accuracy">正答率が低い順</option>
+            <option value="attempts">回答回数が多い順</option>
+          </select>
         </div>
         <div id="wordList"></div>
       </div>
@@ -93,6 +115,36 @@
       </div>
     </section>
   </main>
+
+  <div id="editModal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>単語を修正</h2>
+        <button id="closeEditBtn" class="icon-btn">×</button>
+      </div>
+      <form id="editForm">
+        <input id="editId" type="hidden">
+        <label for="editJapanese">日本語</label>
+        <input id="editJapanese" required>
+        <label for="editEnglish">正解の英語</label>
+        <input id="editEnglish" required autocapitalize="none" spellcheck="false">
+        <label for="editExample">例文・補足</label>
+        <textarea id="editExample" rows="3"></textarea>
+        <div id="currentImageWrap" class="current-image-wrap hidden">
+          <p class="note">現在の画像</p>
+          <img id="currentEditImage" class="edit-image" alt="現在の登録画像">
+          <label class="checkbox-label"><input id="removeImageCheck" type="checkbox"> 現在の画像を削除する</label>
+        </div>
+        <label for="editImageInput">画像を変更（任意）</label>
+        <input id="editImageInput" type="file" accept="image/*">
+        <p class="note">新しい画像を選ぶと現在の画像と置き換わります。</p>
+        <div class="button-row">
+          <button id="cancelEditBtn" type="button">キャンセル</button>
+          <button type="submit" class="primary">変更を保存</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <footer>
     <p>データはこの端末内に保存されます。</p>
