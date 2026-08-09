@@ -1,4 +1,4 @@
-const CACHE_NAME = "english-typing-v3";
+const CACHE_NAME = "english-typing-v4";
 const APP_FILES = [
   "./",
   "./index.html",

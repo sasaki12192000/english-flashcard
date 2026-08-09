@@ -32,19 +32,21 @@
         <div class="priority-badge hidden" id="priorityBadge"></div>
         <h2 id="question">まず「単語登録」からカードを追加してください</h2>
 
-        <div class="quick-answer">
-          <p class="quick-title">急いでいるときは自己申告</p>
-          <div class="quick-buttons">
-            <button id="knowBtn" class="know-btn">✓ わかる</button>
-            <button id="dontKnowBtn" class="dontknow-btn">✕ わからない</button>
+        <div id="answerControls">
+          <div class="quick-answer">
+            <p class="quick-title">急いでいるときは自己申告</p>
+            <div class="quick-buttons">
+              <button id="knowBtn" class="know-btn">✓ わかる</button>
+              <button id="dontKnowBtn" class="dontknow-btn">✕ わからない</button>
+            </div>
           </div>
+  
+          <div class="divider"><span>または英語を入力</span></div>
+          <label for="answer">英語を入力</label>
+          <input id="answer" type="text" autocomplete="off" autocapitalize="none"
+                 spellcheck="false" placeholder="英語を入力">
+          <button id="checkBtn" class="primary">入力した答えを判定</button>
         </div>
-
-        <div class="divider"><span>または英語を入力</span></div>
-        <label for="answer">英語を入力</label>
-        <input id="answer" type="text" autocomplete="off" autocapitalize="none"
-               spellcheck="false" placeholder="英語を入力">
-        <button id="checkBtn" class="primary">入力した答えを判定</button>
 
         <div id="result" class="result hidden" aria-live="polite">
           <h3 id="judgement"></h3>

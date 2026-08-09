@@ -116,6 +116,7 @@ function chooseWeightedCard() {
     $("priorityBadge").classList.remove("hidden");
   }
   $("answer").value = "";
+  $("answerControls").classList.remove("hidden");
   setAnswerControlsDisabled(false);
   $("result").classList.add("hidden");
   $("answerImage").classList.add("hidden");
@@ -180,6 +181,7 @@ async function recordResult(ok, mode, typed="") {
   } else {
     $("answerImage").classList.add("hidden");
   }
+  $("answerControls").classList.add("hidden");
   $("result").classList.remove("hidden");
   setAnswerControlsDisabled(true);
   renderList(); renderOverallStats();
