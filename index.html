@@ -10,12 +10,12 @@
   <title>英単語タイピング練習</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="apple-touch-icon" href="./icon-192.png">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style-v5.css?v=5">
 </head>
 <body>
   <header>
     <h1>英単語タイピング練習</h1>
-    <p id="status">準備中…</p>
+    <p id="status">v5・準備中…</p>
   </header>
 
   <main>
@@ -33,19 +33,19 @@
         <h2 id="question">まず「単語登録」からカードを追加してください</h2>
 
         <div id="answerControls">
-          <div class="quick-answer">
-            <p class="quick-title">急いでいるときは自己申告</p>
-            <div class="quick-buttons">
-              <button id="knowBtn" class="know-btn">✓ わかる</button>
-              <button id="dontKnowBtn" class="dontknow-btn">✕ わからない</button>
-            </div>
+        <div class="quick-answer">
+          <p class="quick-title">急いでいるときは自己申告</p>
+          <div class="quick-buttons">
+            <button id="knowBtn" class="know-btn">✓ わかる</button>
+            <button id="dontKnowBtn" class="dontknow-btn">✕ わからない</button>
           </div>
-  
-          <div class="divider"><span>または英語を入力</span></div>
-          <label for="answer">英語を入力</label>
-          <input id="answer" type="text" autocomplete="off" autocapitalize="none"
-                 spellcheck="false" placeholder="英語を入力">
-          <button id="checkBtn" class="primary">入力した答えを判定</button>
+        </div>
+
+        <div class="divider"><span>または英語を入力</span></div>
+        <label for="answer">英語を入力</label>
+        <input id="answer" type="text" autocomplete="off" autocapitalize="none"
+               spellcheck="false" placeholder="英語を入力">
+        <button id="checkBtn" class="primary">入力した答えを判定</button>
         </div>
 
         <div id="result" class="result hidden" aria-live="polite">
@@ -152,6 +152,6 @@
     <p>データはこの端末内に保存されます。</p>
   </footer>
 
-  <script src="./app.js"></script>
+  <script src="./app-v5.js?v=5"></script>
 </body>
 </html>
